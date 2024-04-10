@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11044142 個人履歷</title>
+    <style>
+        /*網頁排版*/
+        body{
+            background: radial-gradient(#0E0E52 0%, black 100%);
+            color:#78C0E0;
+            background-attachment: fixed;
+            font-family: arial,"Microsoft JhengHei";
+        }
+        nav{
+            font-weight: bolder;
+            float: left;
+            width: 15%;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            background: linear-gradient(45deg, black 0%, #0E0E52 50%, black 100%);
+        }
+        section{
+            float: right;
+            width: 80%;
+        }
+        article{
+            clear: both;
+        }
+        footer{
+            clear:both;
+            text-align: center;
+        }
+
+        /*網頁排版-手機板*/
+        @media screen and (max-width: 650px){
+            nav{
+                width: 97%;
+                height: 8%;
+                text-align: center;
+                font-size: 1em;
+                display: flex;
+                margin: 0 auto;
+                flex-direction: row;
+                margin-top: -15%;
+                background: linear-gradient(30deg,black 0%, #0E0E52 50%, black 100%);
+            }
+            section{
+                clear: both;
+                float: none;
+                width: 100%;
+                height: 80%;
+                margin-top: 15%;
+            }
+        }
+
+        /*導覽列*/
+        nav > div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0%;
+            font-size: 1.2em;
+        }
+        nav > div > a{
+            text-decoration: none;
+            color:#78C0E0;
+            transition: 0.5s;
+        }
+        nav > div > a:hover{
+            font-size: large;
+            letter-spacing: 0.1em;
+        }
+
+        /*導覽列-手機板*/
+        @media screen and (max-width: 650px){
+            nav > div{
+                width: 20%;
+                height: 40px;
+                flex-direction: row;
+                margin: 0 auto;
+                padding: 0%;
+                font-size: 1em;
+            }
+        }
+
+        /*基本資料*/
+        div.Selfie{
+            float: left;
+            width: 49%;
+            padding: 0 auto;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        div.Selfie > img{
+            position: relative;
+            width: 90%;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            z-index: -1;
+        }
+        
+        div.VerticleLine{
+            float: left;
+            margin: 0%;
+        }
+        div.Scription{
+            float:right;
+            width: 49%;
+            padding-left: 10px;
+        }
+        div.Scription > span{
+            font-weight: bolder;
+            font-size: larger;
+        }
+        hr{
+            background-color: #78C0E0;
+            box-shadow: 0px 0px 1em #78C0E0,
+                        0px 0px 0.5em #419ac0;;
+            height:1px;
+            width: 95%;
+            border:none;
+        }
+        hr.Verticle{
+            background-color: #78C0E0;
+            box-shadow: 0px 0px 1em #78C0E0,
+                        0px 0px 0.5em #419ac0;
+            border-width: 0;
+            border:none;
+
+            height:45vh;
+            width:.1vw;
+            border-width:0;
+            margin: -2px;
+        }
+        /*基本資料-手機板*/
+        @media screen and (max-width: 655px){
+            section{
+            clear:both;
+            }  
+            div.Selfie{
+                float: none;
+                width: 100%;
+                padding: 0 auto;
+                margin: auto;
+                display: flex;
+                justify-content: center; 
+                align-items: center;
+            }
+            div.Selfie > img{
+                position: relative;
+                width: 80%;
+                margin:auto;
+            }
+            div.Scription{
+                float: none;
+                width: 80%;
+                padding-left: 10px;
+                margin: auto;
+            }
+            div.Scription > span{
+                font-weight: bolder;
+                font-size: normal;
+            }
+            div.VerticleLine{
+                float: none;
+                margin: 0%;
+            }
+            hr.Verticle{
+                background-color: #78C0E0;
+                box-shadow: 0px 0px 1em #78C0E0,
+                            0px 0px 0.5em #419ac0;
+                border-width: 1px;
+                border:none;
+                height:1px;
+                width: 95%;
+                margin: 5px auto;
+            }
+        }
+
+        /*外部連結*/
+        div.Link{
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            width: 49%;
+            height: 30px;
+        }        
+        div.Link > div {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            border-radius: 10px;
+            padding: 0 10px;
+            height: 30px;
+            color: transparent;
+            font-size: 0px;
+            transition: 0.3s;
+        }
+        div.Link > div > a{
+            transition: 0.3s;
+        }
+        div.Link > div > img{
+            width: 25px;
+            height: 25px;
+            margin: auto;
+            transition: 0.3s;
+        }
+        div.Link > div > img.Hover{
+            width: 0px;
+            height: 0px;
+            margin: 0;
+            transition: 0.3s;
+        }
+        div.Link > div:hover{
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            background-color: #0E0E52;
+            color:#78C0E0;
+            font-size: 12px;
+            text-align: center;
+        }
+        div.Link > div:hover > a{
+            text-decoration: none;
+            color:#78C0E0;
+            transition: 0s;
+        }
+        div.Link > div:hover > img{
+            width: 0px;
+            height: 0px;
+            margin: 0;
+        }
+        div.Link > div:hover > img.Hover{
+            width: 30px;
+            height: 30px;
+            margin: 0 0 0 10px;
+        }
+        
+        /*外部連結-手機板*/
+         @media screen and (max-width: 655px){
+            div.Link{
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                width: 90%;
+                height: 30px;
+            }  
+            div.Link > div {
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                border-radius: 10px;
+                padding: 0 10px;
+                height: 30px;
+                color: transparent;
+                font-size: 0px;
+                transition: 0.3s;
+            }
+            div.Link > div > img{
+                width: 30px;
+                height: 30px;
+                margin: auto;
+                transition: 0.3s;
+            }
+            div.Link > div > img.Hover{
+                width: 0px;
+                height: 0px;
+                margin: 0;
+                transition: 0.3s;
+            }
+            div.Link > div:hover{
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                background-color: #0E0E52;
+                color:#78C0E0;
+                font-size: 16px;
+            }
+            div.Link > div:hover > a{
+                text-decoration: none;
+                color:#78C0E0;
+            }
+            div.Link > div:hover > img{
+                width: 0px;
+                height: 0px;
+                margin: 0x;
+            }
+            div.Link > div:hover > img.Hover{
+                width: 30px;
+                height: 30px;
+                margin: 0 0 0 10px;
+            }
+        }
+        
+        /*技能配置*/
+        span.Title{
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            margin: 0 0 0 2.5%;
+            color: black;
+            -webkit-text-stroke: 1px #78C0E0;
+            text-shadow: 0px 0px 1em #78C0E0,
+                         0px 0px 0.5em #419ac0;
+        }
+        table{
+            width:90%;
+            margin:auto;
+            position:relative;
+        }
+        td{
+            border-radius: 10px;
+        }
+        td.Center{
+            height: 80px;
+            width: 20%;
+            margin: 5%;
+            position:relative;
+        }
+        td.Side{
+            width: 40%;
+            border: 1px #78C0E0 solid;
+            box-shadow: 0px 0px 1em #78C0E0,
+                        0px 0px 0.5em #419ac0;
+            background: linear-gradient(170deg, transparent 0%, #48768a 20%,  transparent 40%, transparent);
+        }
+        td.Bottom{
+            width: 100%;
+            border: 1px #78C0E0 solid;
+            box-shadow: 0px 0px 1em #78C0E0,
+                        0px 0px 0.5em #419ac0;
+            padding: 0% 20% 0% 20%;
+            background: linear-gradient(170deg, transparent 0%,#78C0E0 15%, transparent 30%, transparent);
+        }
+        /*技能等級*/
+        span.SkillWhite{
+            color: white;
+            font-weight: bolder;
+            font-size: 1.2em;
+            text-shadow: 0px 0px 1em white;
+            text-align: center;
+        }
+        span.SkillGreen{
+            color: lime;
+            font-weight: bolder;
+            font-size: 1.2em;
+            text-shadow: 0px 0px 1em lime;
+            text-align: center;
+        }
+        span.SkillOrange{
+            color: #ff9100;
+            font-weight: bolder;
+            font-size: 1.2em;
+            text-shadow: 0px 0px 1em #ff9100;
+            text-align: center;
+        }
+        span.SkillRed{
+            color: Red;
+            font-weight: bolder;
+            font-size: 1.2em;
+            text-shadow: 0px 0px 1em Red;
+            text-align: center;
+        }
+        span.SkillGold{
+            color: Gold;
+            font-weight: bolder;
+            font-size: 1.2em;
+            text-shadow: 0px 0px 1em Gold;
+            text-align: center;
+        }
+        p.SkillTitle{
+            text-align: center;
+            margin: 0% 0% -12px 0%;
+        }
+        /*技能等級-手機板*/
+        @media screen and (max-width: 650px){
+            table{
+                width: 80%;
+            }
+            td{
+                font-size: smaller;
+            }
+            span.side{
+                width: 42%;
+            }
+            span.SkillWhite{
+                font-size: 1em;
+            }
+            span.SkillGreen{
+                font-size: 1em;
+            }
+            span.SkillRed{
+                font-size: 1em;
+            }
+            span.SkillOrange{
+                font-size: 1em;
+            }
+            span.SkillGold{
+                font-size: 1em;
+            }
+        }
+
+        /*中央圓圈*/
+        div.InCircle{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            color: #419ac0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin: auto;
+            font-weight: bold;
+            z-index: 1;
+        }
+        div.Circle{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: auto; 
+            -webkit-mask-image: radial-gradient(transparent 0%, transparent 50%, black 50%, black);
+            mask-image: linear-gradient(transparent 0%, transparent 50%, black 50%, black);
+            transform: rotate(0turn);
+        }
+        div.Circle:hover{
+            animation: ROTATE 1s ease-in-out 0s 1 normal;
+        }
+        td.Center:not(:hover) > div.InCircle:not(:hover) > div.Circle{
+            animation: ROTATE 1s ease-in-out 0s 1 normal;
+        }
+        td.Center:hover > div.InCircle > div.Circle{
+            animation: ROTATE 1s ease-in-out 0s 1 normal;
+        }
+        @keyframes ROTATE {
+            0%{transform: rotate(0turn);}
+            80%{transform: rotate(-1.2turn);}
+            100%{transform: rotate(-1turn);}
+        }
+
+        /*排版*/
+        div.TableContener{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: -2;
+        }
+        tr.Space > td{
+            height: 20px;
+            margin: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#basic">
+                基本<br>
+                資料
+            </a>
+        </div>
+        <div>
+            <a href="#profession">
+                專業<br>
+                技能
+            </a>
+        </div>
+        <div>
+            <a href="#hobby">
+                興趣<br>
+                技能
+            </a>
+        </div>
+        <div>
+            <a href="#achievement">
+                已取得<br>
+                成就
+            </a>
+        </div>
+    </nav>
+    <header>
+        
+    </header>
+    <section>
+        <article id="basic">
+            <span class="Title">基本資料</span>
+            <hr>
+            <div class="Selfie">
+                <img src="image/personal.jpg" alt="My Photo Here!">
+            </div>
+            <div class="VerticleLine">
+                <hr class="Verticle">
+            </div>
+            <div class="Link">
+                <div class="FB">
+                    <img src="image\FB.png" alt="">
+                    <a href="https://www.facebook.com/profile.php?id=100012321933930">Facebook 廖偉翔</a>
+                    <img class="Hover" src="image\hovered_FB.png" alt="">
+                </div>
+                <div class="IG">
+                    <img src="image\IG.png" alt="">
+                    <a href="https://www.instagram.com/samliao191141/">Instagram 廖偉翔</a>
+                    <img class="Hover" src="image\hovered_IG.png" alt="">
+                </div>
+                <div class="YT">
+                    <img src="image\YT.png" alt="">
+                    <a href="https://www.youtube.com/channel/UCGtwApAjv_scwEqPOhucGQA">Youtube 信Xin</a>
+                    <img class="Hover" src="image\hovered_YT.png" alt="">
+                </div>
+                <div class="Mail">
+                    <img src="image\Mail.png" alt="">
+                    <a href="mailto:samliao19114@gmail.com">G-Mail</a>
+                    <img class="Hover" src="image\hovered_Mail.png" alt="">
+                </div>
+            </div>
+            <div class="Scription">
+                <span class="ScriptHead">名　字</span>:　廖偉翔<br>
+                <span class="ScriptHead">暱　稱</span>:　信Xin<br>
+                <span class="ScriptHead">學　系</span>:　資管二甲<br>
+                <span class="ScriptHead">目　標</span>:　喜歡遊戲、製作遊戲！<br>
+                <span class="ScriptHead">優　點</span>:　認真、負責、對萬事好奇<br>
+                <span class="ScriptHead">缺　點</span>:　急性子、完美主義者<br>
+                <span class="ScriptHead">座右銘：</span><br>
+                <div style="text-align: center;">
+                    <span style="font-style:oblique; color:aqua;
+                                text-shadow: aqua 0 0 0.5em;
+                                text-decoration: underline; text-align: center;">
+                        「信是所望之事的實底，
+                        是未見之事的確據。」<br>
+                        希伯來書 11:1
+                    </span>
+                </div>
+                
+            </div>
+        </article>
+        <article id="profession">
+            <span class="Title">專業技能</span>
+            <hr>
+            <div class="TableContener">
+                <table>
+                    <tr>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillWhite">
+                                    HTML<br>
+                                    [始心者]
+                                </span>
+                            </p>
+                            <br>
+                            在高職的時候學習了約一年的網頁設計製作，
+                            但基於當時無心聽課，故僅為稍稍碰過。
+                        </td>
+                        <td class="Center">
+                            <div class="InCircle">
+                                網頁<br>設計
+                                <div class="Circle"
+                                style="background: conic-gradient(
+                                        transparent 0%, lime 1%,
+                                        transparent 50%, white 51%, transparent 100%);
+                                        box-shadow: 0px 0px 1em white;"> 
+                            </div>
+                            </div>
+                            
+                        </td>
+                        <td class="Side">   
+                            <p class="SkillTitle">
+                                <span class="SkillGreen">
+                                    CSS<br>
+                                    [初征者]
+                                </span>
+                            </p>
+                            <br>
+                            在高職的時候學習了約一年的網頁設計製作，
+                            不過後續對於設計方面充滿熱情，自己繼續鑽研。
+                        </td>
+                    </tr>
+                    <tr class="Space">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillOrange">
+                                    Python<br>[熟能者]
+                                </span>
+                            </p>
+                            <br>
+                            曾經在暑假時間去台灣大學修習課程，並做出一個小小的猜拳遊戲程式。熟悉其中的函數用法、並得以實現創作性內容。
+                        </td>
+                        <td rowspan="2" class="Center">
+                            <div class="InCircle">
+                                程式<br>編撰
+                                <div class="Circle"
+                                style="background: conic-gradient(
+                                    transparent 0%, lime 1%,
+                                    transparent 25%, #ff9100 26%,
+                                    transparent 50%, red 51%, 
+                                    transparent 75%, #ff9100 76%, transparent 100%);
+                                        box-shadow: 0px 0px 1em white;"> 
+                                </div>
+                            </div>
+                        </td>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillGreen">
+                                    Java<br>
+                                    [初征者]
+                                </span>
+                            </p>
+                            <br>
+                            理解JAVA當中的架構，但並非完全熟悉其中的語法與物件導向函數。學習期間雖然不長，但仍想在空閒時間研究！
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillRed">
+                                    Minecraft<br>
+                                    [老練者]
+                                </span>
+                            </p>
+                            <br>
+                            自學Minecraft中的程式約四年，目前已可以做出許多小功能，也教過其他人撰寫其中的程式。期望之後能夠完整透過MC學習遊戲架構。
+                        </td>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillOrange">
+                                    Visual Studio<br
+                                    >[熟能者]
+                                </span>
+                            </p>
+                            <br>
+                            在高職期間學過一年，利用圖像化界面理解物件導向的概念，並透過資料庫得以做出小型程式，在商業應用的結合上有一定理解。
+                        </td>
+                    </tr><tr class="Space">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillOrange">
+                                    Word<br>
+                                    [熟能者]
+                                </span>
+                            </p>
+                            <br>
+                            從小學時代就開始練習操作適應，並藉由多年的不斷練習精進，得以快速完成交辦工作、進行排版配置、增加美觀、及合併列印等等。
+                        </td>
+                        <td class="Center">
+                            <div class="InCircle">
+                                文書<br>軟體
+                                <div class="Circle"
+                                style="background: conic-gradient(
+                                    transparent 0%, red 1%,
+                                    transparent 33%, red 34%,
+                                    transparent 66%, #ff9100 67%, transparent 100%);
+                                        box-shadow: 0px 0px 1em white;"> 
+                                </div>
+                            </div>
+                        </td>
+                        <td class="Side">
+                            <p class="SkillTitle">
+                                <span class="SkillRed">
+                                    Excel<br>
+                                    [老練者]
+                                </span>
+                            </p>
+                            <br>
+                            從國中開始對其中的程式邏輯感興趣，並曾使用其中的函數來自製類會計系統，及實現股票紀錄等等，也熟悉圖表、介面化的使用細節。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="Bottom">
+                            <p class="SkillTitle">
+                                <span class="SkillRed">
+                                    PowerPoint[老練者]
+                                </span>
+                            </p>
+                            <br>
+                            從國小時代學習動畫的運作、並由此開始多樣練習裏頭的不同技巧，不論是背景、內文、排版、動畫等多種操作皆可上手，得以提供豐富的簡報樣式。
+                        </td>
+                    </tr>
+                </table>
+            </div>        
+        </article>
+        <article id="hobby">
+            <span class="Title">興趣技能</span>
+            <hr>
+        </article>
+        <article id="achievement">
+            <span class="Title">已獲得成就</span>
+            <hr>
+            <div class="InCircle">
+                文書<br>軟體
+                <div class="Circle"
+                style="background: conic-gradient(
+                    transparent 0%, red 1%,
+                    transparent 33%, red 34%,
+                    transparent 66%, #ff9100 67%, transparent 100%);
+                        box-shadow: 0px 0px 1em white;"> 
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <code>©廖偉翔 2022-11-10 版權所有</code>
+    </footer>
+</body>
+</html>
